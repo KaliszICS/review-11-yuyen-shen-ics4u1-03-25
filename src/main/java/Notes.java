@@ -1,42 +1,51 @@
 
 class Notes {
 	public static void main(String[] args) {
-		//creating an array
 
-		// int[] numArray;
+		//declaring an array
 
-		//empty array - filled with default values
+		int num;
+		int[] numArr;
+		int numArr2[];
 
-		int[] numArray = new int[5];  //creates an int array of size 5
+		//initalize an array
+
+		numArr = new int[5]; //"Empty" Array - fills it with default values
+		//int - 0
 
 		//prebuilt array
 
-		numArray = new int[]{1, 3, 5}; //need to specify new int if you don't declare the array on the same line
+		numArr = new int[]{1, 3, 5};
+		numArr = new int[]{2, 4, 6, 8}; //array can be replaced, but not altered
+		int[] numArr3 = {1, 3, 5, 7}; //only possible if declaring and assigning on the same line
 
-		int[] numArray2 = {1, 3, 5, 7}; //only doable when the array is declared on the same line
+		numArr[0] = 5;
+		System.out.println(numArr[0]);
 
-		numArray[0] = 5;
-		System.out.println(numArray[1]);
+		System.out.println(numArr);//reference
 
-		//looking through an array
-
-		for (int i = 0; i < numArray.length; i++) {
-			System.out.println(numArray[i]);
+		for (int i = 0; i < numArr.length; i++) {
+			System.out.println(numArr[i]);
 		}
 
-		for (int i = 0; i < numArray.length; i++) {
-			numArray[i] = numArray[i] + 8;
-			System.out.println(numArray[i]);
+		//altering values
+		for (int i = 0; i < numArr.length; i++) {
+			numArr[i] = numArr[i] + 8;
+			System.out.println(numArr[i]);
 		}
 
-		int num = 13;
-		int index = -1;
-		//  {13, 11, 13}
-		for (int i = 0; i < numArray.length; i++) { // finds the last occurrence
-			if (numArray[i] == num) {
+		//sequentail search
+
+		numArr = new int[]{13, 11, 13};
+
+		num = 13;
+		int index = -1; //default value - invalid if we don't find the number
+
+		for (int i = 0; i < numArr.length; i++) { //finds the last occurance
+			if (numArr[i] == num) {
 				index = i;
 				// break;
-				// i = numArray.length;
+				// i = numArr.length; //make the condition false
 			}
 		}
 
